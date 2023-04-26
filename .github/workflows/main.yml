@@ -42,9 +42,9 @@ jobs:
         with:
           name: build
           path: build
-      - name: GitHub Action for Firebase
+      - name: Deploy to Firebase
         uses: w9jds/firebase-action@v11.24.1
         with:
-          args: deploy --only hosting
+          args: deploy --only hosting --token ${{secrets.FIREBASE_TOKEN}}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
